@@ -108,6 +108,7 @@ from django.conf import settings
                 </div>
             </div>
             % if settings.FEATURES["ENABLE_MICRO_MASTERS"]:
+              % if len(programs):
                 <div class="online-program">
                     <div class="container">
                         <h2>Our Programs</h2>
@@ -142,6 +143,7 @@ from django.conf import settings
                         </div>
                     </div>
                 </div>
+              % endif
             % endif
             <section class="preparation">
                 <div class="container">
@@ -195,6 +197,7 @@ from django.conf import settings
             <div class="course-benefits">
               <div class="container">
                   <div class="row">
+                    % if statistical:
                       % for key, val in statistical.get('fields').iteritems():
                         % if val:
                           <div class="col-sm-3">
@@ -208,6 +211,7 @@ from django.conf import settings
                           </div>
                         % endif
                       % endfor
+                    % endif
                     </div>
                 </div>
             </div>
